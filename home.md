@@ -1,3 +1,3 @@
-# Salut, c'est Gautoz
+# Hello!
 
-Vous m'avez déjà vu dans des sitcoms tels que "Les branlos de GK" et "les mimis du dédé".
+This is the home page of Chisai, a small static site generator.
