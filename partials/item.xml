@@ -1,0 +1,9 @@
+<item>
+  <title>rssItemTitle</title>
+  <link>rssItemUrl</link>
+  <guid isPermaLink="false">rssItemUrl</guid>
+  <pubDate>rssItemDate</pubDate>
+<description>
+<![CDATA[rssItemContent]]>
+  </description>
+</item>
