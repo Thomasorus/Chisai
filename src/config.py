@@ -1,4 +1,4 @@
-content_folder = ['art']
+content_folder = ['art', 'blog']
 relative_build_url = "/"
 absolute_build_url = "https://thomasorus.github.io/Chisai/"
 build_folder = "build/"
@@ -12,3 +12,4 @@ name_of_site = "Chīsai"
 site_meta_description = "Chīsai, a small and ready to use micro-site generator."
 twitter_name = "@thomasorus"
 home_name = "Home"
+see_all = "See more"
