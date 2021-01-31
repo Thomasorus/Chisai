@@ -90,6 +90,8 @@ select {
     --blue3: hsl(210, 31%, 80%);
     --blue2: hsl(212, 33%, 89%);
     --blue1: hsl(210, 36%, 96%);
+    --cyan: hsl(185, 62%, 45%);
+    --shadow: 0 4px 6px hsl(0, 0%, .2);
     --ratio: 1.5;
     --s-5: calc(var(--s-4) / var(--ratio));
     --s-4: calc(var(--s-3) / var(--ratio));
@@ -130,6 +132,7 @@ header a {
 
 a {
     text-decoration: none;
+    color: var(--cyan);
 }
 
 nav em {
@@ -147,24 +150,32 @@ h2 {
     color: var(--blue9);
 }
 
+h3 {
+    font-size: var(--s0);
+    color: var(--blue9);
+}
+
 main {
     padding: var(--s0);
-    background-color: var(--blue1);
     color: var(--blue7);
-    padding: var(--s1);
+    padding: var(--s0);
+    background-color: var(--cyan);
+    border-radius: 25px;
+    box-shadow: 3px 3px 3px var(--blue3);
+
 }
 
 article {
     background-color: var(--blue1);
-    border-radius: 25px;
+    border-radius: 15px;
     padding: var(--s0);
-    border: 1px solid var(--blue5);
+    box-shadow: 3px 3px 3px var(--blue8);
 }
 
 main a {
-    color: inherit;
-    color: var(--text);
-    border-bottom: 2px solid var(--blue5);
+    color: var(--blue8);
+    border-bottom: 2px solid var(--cyan);
+
 }
 
 main date {
@@ -223,6 +234,25 @@ ul>*+* {
     height: 100%;
     left: 0;
     right: 0;
+}
+
+.listing {
+    padding: 0;
+    list-style: none;
+    line-height: 1;
+}
+
+.listing h3 {
+    font-weight: 300;
+}
+
+.listing small {
+    display: block;
+    font-size: var(--s-1);
+}
+
+.listing>*+* {
+    margin-top: var(--s-2);
 }
 
 

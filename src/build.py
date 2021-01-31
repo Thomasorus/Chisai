@@ -234,8 +234,9 @@ def generate_sub_pages(entries, num, folder, title):
             link_url = entry["file"] + ".html"
 
         if entry["file"] != "index":
-            entry_string = "<li><a href='" + link_url + "'>" + \
-                entry["date"] + " : " + entry["title"] + "</a></li>\n"
+            entry_string = "<li><h3><a href='" + link_url + \
+                "'>" + entry["title"] + "</a></h3><small>" + \
+                entry["date"] + "</small></li>\n"
             sub_page_list += entry_string
     sub_page_list += "</ul>"
 
@@ -244,7 +245,8 @@ def generate_sub_pages(entries, num, folder, title):
         title = "<h2>%s</h2>" % folder.capitalize()
         sub_page_list = title + sub_page_list
         sub_page_link = build_url + folder
-        sub_page_link_html = "<small><a href='%s'>Voir tout</a></small>" % sub_page_link
+        sub_page_link_html = "<small><a href='%s'>" % sub_page_link + \
+            config.see_all + "</a></small>"
         sub_page_list += sub_page_link_html
 
     return sub_page_list
