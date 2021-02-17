@@ -77,21 +77,12 @@ select {
 }
 
 
-/* GAUTOZ CSS */
+/* CHISAI CSS BY THOMASORUS */
 
 :root {
-    --blue10: hsl(209, 61%, 16%);
-    --blue9: hsl(211, 39%, 23%);
-    --blue8: hsl(209, 34%, 30%);
-    --blue7: hsl(209, 28%, 39%);
-    --blue6: hsl(210, 22%, 49%);
-    --blue5: hsl(209, 23%, 60%);
-    --blue4: hsl(211, 27%, 70%);
-    --blue3: hsl(210, 31%, 80%);
-    --blue2: hsl(212, 33%, 89%);
-    --blue1: hsl(210, 36%, 96%);
-    --cyan: hsl(185, 62%, 45%);
-    --shadow: 0 4px 6px hsl(0, 0%, .2);
+    --text: black;
+    --background: white;
+    --dots: radial-gradient(currentColor 1px, transparent 1px), radial-gradient(currentColor 1px, transparent 1px);
     --ratio: 1.5;
     --s-5: calc(var(--s-4) / var(--ratio));
     --s-4: calc(var(--s-3) / var(--ratio));
@@ -107,15 +98,25 @@ select {
     font-size: calc(1rem + 0.5vw);
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: white;
+        --background: black;
+        --dots: radial-gradient(white 1px, transparent 1px), radial-gradient(white 1px, transparent 1px);
+    }
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    background-color: var(--blue1);
+    background-color: var(--background);
+    color: var(--text);
 }
 
 header {
     width: 100%;
     text-align: center;
     font-size: var(--s1);
+    padding-top: var(--s3);
 }
 
 header nav {
@@ -125,14 +126,14 @@ header nav {
 }
 
 header a {
-    color: var(--blue5);
+    color: var(--text);
     text-transform: uppercase;
     font-weight: 700;
 }
 
 a {
+    color: var(--text);
     text-decoration: none;
-    color: var(--cyan);
 }
 
 nav em {
@@ -141,41 +142,36 @@ nav em {
 
 h1 {
     font-size: var(--s2);
-    color: var(--blue9);
+    color: var(--text);
     line-height: 1;
 }
 
 h2 {
     font-size: var(--s1);
-    color: var(--blue9);
+    color: var(--text);
 }
 
 h3 {
     font-size: var(--s0);
-    color: var(--blue9);
+    color: var(--text);
 }
 
 main {
     padding: var(--s0);
-    color: var(--blue7);
-    padding: var(--s0);
-    background-color: var(--cyan);
-    border-radius: 25px;
-    box-shadow: 3px 3px 3px var(--blue3);
-
+    padding: var(--s-1);
+    background-image: var(--dots);
+    background-size: calc(4 * 1px) calc(4 * 1px);
+    background-position: 0 0, calc(2 * 1px) calc(2 * 1px);
 }
 
 article {
-    background-color: var(--blue1);
-    border-radius: 15px;
+    background-color: var(--background);
     padding: var(--s0);
-    box-shadow: 3px 3px 3px var(--blue8);
 }
 
 main a {
-    color: var(--blue8);
-    border-bottom: 2px solid var(--cyan);
-
+    color: var(--text);
+    border-bottom: 2px solid var(--text);
 }
 
 main date {
