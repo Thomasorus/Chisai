@@ -13,3 +13,4 @@ site_meta_description = "Chīsai, a small and ready to use micro-site generator.
 twitter_name = "@thomasorus"
 home_name = "Home"
 see_all = "See more"
+go_back = "Go back to"

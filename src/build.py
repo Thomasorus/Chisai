@@ -69,6 +69,7 @@ def generate_html_pages(site_folder, entries, template, sub_pages_list, template
         nav_template = open(template_nav, 'r').read()
         nav_html = nav_template.replace("link_url", url_link)
         nav_html = nav_html.replace("text_url", url_text)
+        nav_html = nav_html.replace("go_back", config.go_back)
         page_template = page_template.replace('page_navigation', nav_html)
 
         # Replaces all occurrences of build_url in the template files (assets, urls, etc)
@@ -142,7 +143,13 @@ def fix_images_urls(page):
     return page
 
 
+def fix_amp(page):
+    page = page.replace(" & ", " &amp; ")
+    return page
+
 # From the list of files, creates the main array of entries that will be processed later
+
+
 def create_entries(pages):
     fullContent = []
     for page in pages:
@@ -155,6 +162,7 @@ def create_entries(pages):
         markdown_text = open(page, 'r').read()
         markdown_text = style_iframes(markdown_text)
         markdown_text = fix_images_urls(markdown_text)
+        markdown_text = fix_amp(markdown_text)
         pageContent = markdown(markdown_text)
 
         # Create the page object with all the informations we need
@@ -197,7 +205,7 @@ def clean_path(path):
 
     if path_items["file"] == "index":
         path_items["parent_url"] = ""
-        path_items["parent_text"] = "l'accueil"
+        path_items["parent_text"] = config.home_name
     else:
         path_items["parent_url"] = items[0]
         path_items["parent_text"] = items[0]
