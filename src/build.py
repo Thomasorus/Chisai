@@ -162,7 +162,6 @@ def create_entries(pages):
         markdown_text = open(page, 'r').read()
         markdown_text = style_iframes(markdown_text)
         markdown_text = fix_images_urls(markdown_text)
-        markdown_text = fix_amp(markdown_text)
         pageContent = markdown(markdown_text)
 
         # Create the page object with all the informations we need
@@ -173,7 +172,7 @@ def create_entries(pages):
         tempPage['parent_text'] = path['parent_text']
         tempPage['date'] = path['date']
         tempPage['iso_date'] = path['iso_date']
-        tempPage['title'] = title
+        tempPage['title'] = fix_amp(title)
         tempPage['pageContent'] = pageContent
 
         fullContent.append(tempPage)
