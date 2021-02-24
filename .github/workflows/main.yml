@@ -14,7 +14,7 @@ jobs:
         run: python3 src/build.py --prod
       #-
         #name: Create cname file
-        # run: echo 'gautoz.cool' > build/CNAME
+        # run: echo 'mydomain.com' > build/CNAME
       -
         name: Deploy to GitHub Pages
         if: success()
