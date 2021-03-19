@@ -213,12 +213,20 @@ def clean_path(path):
 
     # Converts the EU date to US date to allow page sorting
     if path_items["date"] != "index":
-        path_items["iso_date"] = str(
-            datetime.strptime(path_items["date"], '%d-%m-%Y'))
+        if config.date_format == "EU":
+            path_items["iso_date"] = str(
+                datetime.strptime(path_items["date"], '%d-%m-%Y'))
+        if config.date_format == "ISO":
+            path_items["iso_date"] = str(
+                datetime.strptime(path_items["date"], '%Y-%m-%d'))
     else:
         # If index page, add a fake date to avoid empty object
-        path_items["iso_date"] = str(
-            datetime.strptime("01-01-2000", '%d-%m-%Y'))
+        if config.date_format == "EU":
+            path_items["iso_date"] = str(
+                datetime.strptime("01-01-2000", '%d-%m-%Y'))
+        if config.date_format == "ISO":
+            path_items["iso_date"] = str(
+                datetime.strptime("01-01-2000", '%Y-%m-%d'))
 
     return path_items
 
