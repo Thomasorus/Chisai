@@ -14,4 +14,4 @@ twitter_name = "@thomasorus"
 home_name = "Home"
 see_all = "See more"
 go_back = "Go back to"
-date_format = "ISO"  # Choose between EU day-month-year or ISO year-mont-day
+date_format = "EU"  # Choose between EU day-month-year or ISO year-mont-day
