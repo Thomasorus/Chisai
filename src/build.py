@@ -147,6 +147,20 @@ def fix_amp(page):
     page = page.replace(" & ", " &amp; ")
     return page
 
+def fix_wiki_links(page, path):
+    regex = r"\[\[([\s\S]+?\|?[\s\S]+?)\]\]"
+    matches = re.finditer(regex, page, re.MULTILINE)
+    for matchNum, match in enumerate(matches, start=1):
+        for groupNum in range(0, len(match.groups())):
+            captured_group = match.group(groupNum + 1)
+            link_elem = captured_group.split("|")
+            if len(link_elem) > 1:
+                full_url = "<a href='" + build_url + link_elem[1] + ".html' >" + link_elem[0] + "</a>"
+            else:
+                full_url = "<a href='" + build_url + "/" + path + "/" + link_elem[0] + ".html' >" + link_elem[0] + "</a>"
+            page = page.replace(match[0], full_url)
+    return page
+
 # From the list of files, creates the main array of entries that will be processed later
 
 
@@ -162,6 +176,7 @@ def create_entries(pages):
         markdown_text = open(page, 'r').read()
         markdown_text = style_iframes(markdown_text)
         markdown_text = fix_images_urls(markdown_text)
+        markdown_text = fix_wiki_links(markdown_text, path["folder"])
         pageContent = markdown(markdown_text)
 
         # Create the page object with all the informations we need
