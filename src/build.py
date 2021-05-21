@@ -155,9 +155,9 @@ def fix_wiki_links(page, path):
             captured_group = match.group(groupNum + 1)
             link_elem = captured_group.split("|")
             if len(link_elem) > 1:
-                full_url = "<a href='" + build_url + link_elem[1] + ".html' >" + link_elem[0] + "</a>"
+                full_url = "<a href='" + build_url + link_elem[1].strip() + ".html' >" + link_elem[0].strip() + "</a>"
             else:
-                full_url = "<a href='" + build_url + "/" + path + "/" + link_elem[0] + ".html' >" + link_elem[0] + "</a>"
+                full_url = "<a href='" + build_url + "/" + path + "/" + link_elem[0].strip() + ".html' >" + link_elem[0].strip() + "</a>"
             page = page.replace(match[0], full_url)
     return page
 
