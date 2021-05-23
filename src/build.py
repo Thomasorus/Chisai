@@ -7,6 +7,7 @@ import shutil
 import subprocess
 import sys
 from datetime import datetime
+import pathlib
 
 # Import local files
 mistune = __import__('mistune')
@@ -157,7 +158,10 @@ def fix_wiki_links(page, path):
             if len(link_elem) > 1:
                 full_url = "<a href='" + build_url + link_elem[1].strip() + ".html' >" + link_elem[0].strip() + "</a>"
             else:
-                full_url = "<a href='" + build_url + "/" + path + "/" + link_elem[0].strip() + ".html' >" + link_elem[0].strip() + "</a>"
+                if config.flat_build:
+                    full_url = "<a href='" + build_url + link_elem[0].strip() + ".html' >" + link_elem[0].strip() + "</a>"
+                else:
+                    full_url = "<a href='" + build_url + path + "/" + link_elem[0].strip() + ".html' >" + link_elem[0].strip() + "</a>"
             page = page.replace(match[0], full_url)
     return page
 
@@ -209,39 +213,62 @@ def move_files(site_folder, path):
 
 # Transforms the file locations to an array of strings
 def clean_path(path):
-    path = re.sub('\.md$', '', path)
-    items = path.split('/')
+    path_clean = re.sub('\.md$', '', path)
+    items = path_clean.split('/')
     path_items = {
-        "slug": path + ".html",
+        "slug" : None,
+        "date" : None,
         "folder": items[0],
-        "file": items[1],
+        "file": items[1]
     }
+
+    # xx-xx-xxxx = xx-xx-xxxx.html
+    # xx-xx-xxxx-string or string = string.html or /folder/string.html
+
+    # Checking if the file has a date
+    regex = r"(?:[0-9]{2}-){2}[0-9]{4}"
+    match = re.match(regex, path_items["file"])
+    has_date = False
+
+    if match:
+        has_date = True
+
+    if has_date:
+        if match[0] != path_items["file"]:
+            path_items["date"] = match[0]
+            path_items["slug"] = path_items["file"].replace(match[0] + "-", "") + ".html"
+        else:
+            path_items["date"] = match[0]
+            path_items["slug"] = path_items["file"] + ".html"
+
+        # Converts the EU date to US date to allow page sorting
+        if config.date_format == "EU":
+            path_items["iso_date"] = str(datetime.strptime(path_items["date"], '%d-%m-%Y'))
+        if config.date_format == "ISO":
+            path_items["iso_date"] = str(datetime.strptime(path_items["date"], '%Y-%m-%d'))
+    else:
+        path_items["slug"] = path_items["file"] + ".html"
+        fname = pathlib.Path(path)
+        ctime = datetime.fromtimestamp(fname.stat().st_ctime).replace(microsecond=0)
+        path_items["date"] = str(ctime)
+        path_items["iso_date"] = str(datetime.strptime(str(ctime), '%Y-%m-%d %H:%M:%S'))
+
+    if config.flat_build == False:
+        path_items["slug"] = path_items["folder"] + "/" + path_items["slug"]
 
     if path_items["file"] == "index":
         path_items["parent_url"] = ""
         path_items["parent_text"] = config.home_name
+        if config.flat_build:
+            path_items["slug"] = path_items["folder"] + ".html"
     else:
-        path_items["parent_url"] = items[0]
-        path_items["parent_text"] = items[0]
+        if config.flat_build:
+            path_items["parent_url"] = path_items["folder"] + ".html"
+            path_items["parent_text"] = path_items["folder"].replace("-", " ").capitalize()
+        else:
+            path_items["parent_url"] = path_items["folder"]
+            path_items["parent_text"] = path_items["folder"].replace("-", " ").capitalize()
 
-    path_items["date"] = items[1]
-
-    # Converts the EU date to US date to allow page sorting
-    if path_items["date"] != "index":
-        if config.date_format == "EU":
-            path_items["iso_date"] = str(
-                datetime.strptime(path_items["date"], '%d-%m-%Y'))
-        if config.date_format == "ISO":
-            path_items["iso_date"] = str(
-                datetime.strptime(path_items["date"], '%Y-%m-%d'))
-    else:
-        # If index page, add a fake date to avoid empty object
-        if config.date_format == "EU":
-            path_items["iso_date"] = str(
-                datetime.strptime("01-01-2000", '%d-%m-%Y'))
-        if config.date_format == "ISO":
-            path_items["iso_date"] = str(
-                datetime.strptime("01-01-2000", '%Y-%m-%d'))
 
     return path_items
 
@@ -274,9 +301,11 @@ def generate_sub_pages(entries, num, folder, title):
     if title:
         title = "<h2>%s</h2>" % folder.capitalize()
         sub_page_list = title + sub_page_list
-        sub_page_link = build_url + folder
-        sub_page_link_html = "<small><a href='%s'>" % sub_page_link + \
-            config.see_all + "</a></small>"
+        if config.flat_build:
+            sub_page_link = build_url + folder + ".html"
+        else:
+            sub_page_link = build_url + folder
+        sub_page_link_html = "<small><a href='%s'>" % sub_page_link + config.see_all + "</a></small>"
         sub_page_list += sub_page_link_html
 
     return sub_page_list
