@@ -1,4 +1,4 @@
-content_folder = ['art', 'blog']
+content_folder = ['art', 'blog', 'naming-demo']
 relative_build_url = "/"
 absolute_build_url = "https://thomasorus.github.io/Chisai/"
 build_folder = "build/"
@@ -15,3 +15,4 @@ home_name = "Home"
 see_all = "See more"
 go_back = "Go back to"
 date_format = "EU"  # Choose between EU day-month-year or ISO year-mont-day
+flat_build = True # True or False, if True, all files will be written in the root of the website
