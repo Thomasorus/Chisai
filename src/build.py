@@ -86,8 +86,9 @@ def generate_html_pages(site_folder, entries, template, sub_pages_list, template
         # Checking if content folder exists
         folderExists = os.path.exists(site_folder+entry['folder'])
         # If not, create it
-        if not folderExists:
-            os.mkdir(site_folder+entry['folder'])
+        if config.flat_build == False:
+            if not folderExists:
+                os.mkdir(site_folder+entry['folder'])
 
         # Write the HTML file
         slug_file = site_folder + entry['slug']
