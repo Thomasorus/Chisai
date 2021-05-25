@@ -249,11 +249,8 @@ def clean_path(path):
             path_items["iso_date"] = str(datetime.strptime(path_items["date"], '%Y-%m-%d'))
     else:
         path_items["slug"] = path_items["file"] + ".html"
-
         fname = pathlib.Path(path)
         ctime = datetime.fromtimestamp(fname.stat().st_atime).replace(microsecond=0)
-        print(ctime)
-
         path_items["date"] = str(ctime)
         path_items["iso_date"] = str(datetime.strptime(str(ctime), '%Y-%m-%d %H:%M:%S'))
 
