@@ -249,10 +249,12 @@ def clean_path(path):
             path_items["iso_date"] = str(datetime.strptime(path_items["date"], '%Y-%m-%d'))
     else:
         path_items["slug"] = path_items["file"] + ".html"
-        fname = pathlib.Path(path)
-        ctime = datetime.fromtimestamp(fname.stat().st_atime).replace(microsecond=0)
-        path_items["date"] = str(ctime)
-        path_items["iso_date"] = str(datetime.strptime(str(ctime), '%Y-%m-%d %H:%M:%S'))
+
+        last_edit_unix = str(subprocess.check_output('git log -1 --format="%at" -- ' + path, shell=True)).replace("b'", "").replace("\\n'", '')
+        last_edit = datetime.utcfromtimestamp(int(last_edit_unix)).strftime('%d-%m-%Y')
+
+        path_items["date"] = str(last_edit)
+        path_items["iso_date"] = str(last_edit)
 
     if config.flat_build == False:
         path_items["slug"] = path_items["folder"] + "/" + path_items["slug"]
