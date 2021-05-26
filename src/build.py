@@ -253,12 +253,8 @@ def clean_path(path):
         last_edit = str(subprocess.check_output('git log -1 --format="%ai" ' + path, shell=True)).replace("b'", "").replace("\\n'", '')
         last_edit_iso = datetime.strptime(last_edit[:-6], "%Y-%m-%d %H:%M:%S")
 
-    
-        print(last_edit_iso)
-        # print(last_edit)
-        print("\n")
         if config.date_format == "EU":
-            path_items["date"] = str(last_edit_iso.strftime("%d-%m-%Y"))
+            path_items["date"] = str(last_edit_iso.strftime("%d-%m-%Y %H:%M:%S"))
             print(path_items["date"])
         else:
             path_items["date"] = str(last_edit_iso)
