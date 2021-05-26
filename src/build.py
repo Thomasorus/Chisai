@@ -250,7 +250,7 @@ def clean_path(path):
     else:
         path_items["slug"] = path_items["file"] + ".html"
 
-        last_edit = str(subprocess.check_output('git log -1 --format="%ai" ' + path, shell=True)).replace("b'", "").replace("\\n'", '')
+        last_edit = str(subprocess.check_output('git log -1 --format="%ci" ' + path, shell=True)).replace("b'", "").replace("\\n'", '')
         last_edit_iso = datetime.strptime(last_edit[:-6], "%Y-%m-%d %H:%M:%S")
 
         if config.date_format == "EU":
