@@ -250,7 +250,7 @@ def clean_path(path):
     else:
         path_items["slug"] = path_items["file"] + ".html"
 
-        last_edit_unix = str(subprocess.check_output('git log -1 --format="%at" -- ' + path, shell=True)).replace("b'", "").replace("\\n'", '')
+        last_edit_unix = str(subprocess.check_output('git log -1 --format="%ct" -- ' + path, shell=True)).replace("b'", "").replace("\\n'", '')
         last_edit = datetime.utcfromtimestamp(int(last_edit_unix)).strftime('%d-%m-%Y')
 
         path_items["date"] = str(last_edit)
