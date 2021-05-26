@@ -250,11 +250,20 @@ def clean_path(path):
     else:
         path_items["slug"] = path_items["file"] + ".html"
 
-        last_edit_unix = str(subprocess.check_output('git log -1 --format="%ct" -- ' + path, shell=True)).replace("b'", "").replace("\\n'", '')
-        last_edit = datetime.utcfromtimestamp(int(last_edit_unix)).strftime('%d-%m-%Y')
+        last_edit = str(subprocess.check_output('git log -1 --format="%ai" ' + path, shell=True)).replace("b'", "").replace("\\n'", '')
+        last_edit_iso = datetime.strptime(last_edit[:-6], "%Y-%m-%d %H:%M:%S")
 
-        path_items["date"] = str(last_edit)
-        path_items["iso_date"] = str(last_edit)
+    
+        print(last_edit_iso)
+        # print(last_edit)
+        print("\n")
+        if config.date_format == "EU":
+            path_items["date"] = str(last_edit_iso.strftime("%d-%m-%Y"))
+            print(path_items["date"])
+        else:
+            path_items["date"] = str(last_edit_iso)
+
+        path_items["iso_date"] = str(last_edit_iso)
 
     if config.flat_build == False:
         path_items["slug"] = path_items["folder"] + "/" + path_items["slug"]
