@@ -2,6 +2,7 @@
 import argparse
 import glob
 import os
+import platform
 import re
 import shutil
 import subprocess
@@ -218,7 +219,12 @@ def move_files(site_folder, path):
 # Transforms the file locations to an array of strings
 def clean_path(path):
     path_clean = re.sub('\.md$', '', path)
-    items = path_clean.split('/')
+    items = []
+    if(platform.system() == 'Windows'):
+        items = path_clean.split('\\')
+    else:
+        items = path_clean.split('/')
+
     path_items = {
         "slug" : None,
         "date" : None,
