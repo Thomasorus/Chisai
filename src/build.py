@@ -9,6 +9,9 @@ import sys
 from datetime import datetime
 import pathlib
 
+# Default encoding
+encoding = 'utf-8'
+
 # Import local files
 mistune = __import__('mistune')
 config = __import__('config')
@@ -92,7 +95,7 @@ def generate_html_pages(site_folder, entries, template, sub_pages_list, template
 
         # Write the HTML file
         slug_file = site_folder + entry['slug']
-        with open(slug_file, 'w') as fobj:
+        with open(slug_file, 'w', encoding=encoding) as fobj:
             fobj.write(page_template)
 
     print("All pages created!")
@@ -362,7 +365,7 @@ def create_rss_feed(rss_entries, rss_template, rss_item_template, site_folder):
     template = template.replace('rss_content', rss_items)
 
     slug_file = site_folder + "feed.xml"
-    with open(slug_file, 'w') as fobj:
+    with open(slug_file, 'w', encoding=encoding) as fobj:
         fobj.write(template)
 
     return
@@ -419,7 +422,7 @@ def generate_website():
         'twitter_name', config.twitter_name)
 
     slug_file = config.build_folder + "index.html"
-    with open(slug_file, 'w') as fobj:
+    with open(slug_file, 'w', encoding=encoding) as fobj:
         fobj.write(home_page)
 
     # Create RSS File
