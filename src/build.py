@@ -153,6 +153,7 @@ def fix_amp(page):
     page = page.replace(" & ", " &amp; ")
     return page
 
+
 def fix_wiki_links(page, path):
     regex = r"\[\[([\s\S]+?\|?[\s\S]+?)\]\]"
     matches = re.finditer(regex, page, re.MULTILINE)
@@ -161,12 +162,18 @@ def fix_wiki_links(page, path):
             captured_group = match.group(groupNum + 1)
             link_elem = captured_group.split("|")
             if len(link_elem) > 1:
-                full_url = "<a href='" + build_url + link_elem[1].strip() + ".html' >" + link_elem[0].strip() + "</a>"
+                full_url = "<a href='" + build_url + \
+                    link_elem[1].strip() + ".html' >" + \
+                    link_elem[0].strip() + "</a>"
             else:
                 if config.flat_build:
-                    full_url = "<a href='" + build_url + link_elem[0].strip() + ".html' >" + link_elem[0].strip() + "</a>"
+                    full_url = "<a href='" + build_url + \
+                        link_elem[0].strip() + ".html' >" + \
+                        link_elem[0].strip() + "</a>"
                 else:
-                    full_url = "<a href='" + build_url + path + "/" + link_elem[0].strip() + ".html' >" + link_elem[0].strip() + "</a>"
+                    full_url = "<a href='" + build_url + path + "/" + \
+                        link_elem[0].strip() + ".html' >" + \
+                        link_elem[0].strip() + "</a>"
             page = page.replace(match[0], full_url)
     return page
 
@@ -226,8 +233,8 @@ def clean_path(path):
         items = path_clean.split('/')
 
     path_items = {
-        "slug" : None,
-        "date" : None,
+        "slug": None,
+        "date": None,
         "folder": items[0],
         "file": items[1]
     }
@@ -246,24 +253,29 @@ def clean_path(path):
     if has_date:
         if match[0] != path_items["file"]:
             path_items["date"] = match[0]
-            path_items["slug"] = path_items["file"].replace(match[0] + "-", "") + ".html"
+            path_items["slug"] = path_items["file"].replace(
+                match[0] + "-", "") + ".html"
         else:
             path_items["date"] = match[0]
             path_items["slug"] = path_items["file"] + ".html"
 
         # Converts the EU date to US date to allow page sorting
         if config.date_format == "EU":
-            path_items["iso_date"] = str(datetime.strptime(path_items["date"], '%d-%m-%Y'))
+            path_items["iso_date"] = str(
+                datetime.strptime(path_items["date"], '%d-%m-%Y'))
         if config.date_format == "ISO":
-            path_items["iso_date"] = str(datetime.strptime(path_items["date"], '%Y-%m-%d'))
+            path_items["iso_date"] = str(
+                datetime.strptime(path_items["date"], '%Y-%m-%d'))
     else:
         path_items["slug"] = path_items["file"] + ".html"
 
-        last_edit = str(subprocess.check_output('git log -1 --format="%ci" ' + path, shell=True)).replace("b'", "").replace("\\n'", '')
+        last_edit = str(subprocess.check_output(
+            'git log -1 --format="%ci" ' + path, shell=True)).replace("b'", "").replace("\\n'", '')
         last_edit_iso = datetime.strptime(last_edit[:-6], "%Y-%m-%d %H:%M:%S")
 
         if config.date_format == "EU":
-            path_items["date"] = str(last_edit_iso.strftime("%d-%m-%Y %H:%M:%S"))
+            path_items["date"] = str(
+                last_edit_iso.strftime("%d-%m-%Y %H:%M:%S"))
             print(path_items["date"])
         else:
             path_items["date"] = str(last_edit_iso)
@@ -281,11 +293,12 @@ def clean_path(path):
     else:
         if config.flat_build:
             path_items["parent_url"] = path_items["folder"] + ".html"
-            path_items["parent_text"] = path_items["folder"].replace("-", " ").capitalize()
+            path_items["parent_text"] = path_items["folder"].replace(
+                "-", " ").capitalize()
         else:
             path_items["parent_url"] = path_items["folder"]
-            path_items["parent_text"] = path_items["folder"].replace("-", " ").capitalize()
-
+            path_items["parent_text"] = path_items["folder"].replace(
+                "-", " ").capitalize()
 
     return path_items
 
@@ -322,7 +335,8 @@ def generate_sub_pages(entries, num, folder, title):
             sub_page_link = build_url + folder + ".html"
         else:
             sub_page_link = build_url + folder
-        sub_page_link_html = "<small><a href='%s'>" % sub_page_link + config.see_all + "</a></small>"
+        sub_page_link_html = "<small><a href='%s'>" % sub_page_link + \
+            config.see_all + "</a></small>"
         sub_page_list += sub_page_link_html
 
     return sub_page_list

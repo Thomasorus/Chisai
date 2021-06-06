@@ -1,3 +1,7 @@
 /__pycache__
 /build
 kantan.sh
+
+.vscode/settings.json
+
+src/__pycache__/
