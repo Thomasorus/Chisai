@@ -1,0 +1,294 @@
+/* RESET CSS BY ANDY BELL */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* CHISAI CSS BY THOMASORUS */
+
+:root {
+    --text: black;
+    --background: white;
+    --dots: radial-gradient(currentColor 1px, transparent 1px), radial-gradient(currentColor 1px, transparent 1px);
+    --ratio: 1.5;
+    --s-5: calc(var(--s-4) / var(--ratio));
+    --s-4: calc(var(--s-3) / var(--ratio));
+    --s-3: calc(var(--s-2) / var(--ratio));
+    --s-2: calc(var(--s-1) / var(--ratio));
+    --s-1: calc(var(--s0) / var(--ratio));
+    --s0: 1rem;
+    --s1: calc(var(--s0) * var(--ratio));
+    --s2: calc(var(--s1) * var(--ratio));
+    --s3: calc(var(--s2) * var(--ratio));
+    --s4: calc(var(--s3) * var(--ratio));
+    --s5: calc(var(--s4) * var(--ratio));
+    font-size: calc(1rem + 0.5vw);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: white;
+        --background: black;
+        --dots: radial-gradient(white 1px, transparent 1px), radial-gradient(white 1px, transparent 1px);
+    }
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: var(--background);
+    color: var(--text);
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    font-size: var(--s1);
+    padding-top: var(--s3);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+header a {
+    color: var(--text);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+nav em {
+    font-size: var(--s0);
+}
+
+h1 {
+    font-size: var(--s2);
+    color: var(--text);
+    line-height: 1;
+}
+
+h2 {
+    font-size: var(--s1);
+    color: var(--text);
+}
+
+h3 {
+    font-size: var(--s0);
+    color: var(--text);
+}
+
+main {
+    padding: var(--s0);
+    padding: var(--s-1);
+    background-image: var(--dots);
+    background-size: calc(4 * 1px) calc(4 * 1px);
+    background-position: 0 0, calc(2 * 1px) calc(2 * 1px);
+}
+
+article {
+    background-color: var(--background);
+    padding: var(--s0);
+}
+
+main a {
+    color: var(--text);
+    border-bottom: 2px solid var(--text);
+}
+
+main date {
+    display: block;
+}
+
+li {
+    line-height: 1.3;
+}
+
+ul>*+* {
+    margin-top: var(--s0);
+}
+
+.container {
+    --space: var(--s1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 60ch;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--s0);
+}
+
+.flow>*+* {
+    margin-top: var(--s0);
+}
+
+.flow-small>*+* {
+    margin-top: var(--s-3);
+}
+
+
+.flow-large>*+* {
+    margin-top: var(--s3);
+}
+
+.logo {
+    border-radius: 100%;
+    margin: 0 auto;
+    max-width: 180px;
+    padding: 15px;
+}
+
+.youtube {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.youtube>iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+}
+
+.listing {
+    padding: 0;
+    list-style: none;
+    line-height: 1;
+}
+
+.listing h3 {
+    font-weight: 300;
+}
+
+.listing small {
+    display: block;
+    font-size: var(--s-1);
+}
+
+.listing>*+* {
+    margin-top: var(--s-2);
+}
+
+
+@media (max-width: 520px) {
+
+    :root {
+        --s1: var(--s0);
+    }
+
+    .logo {
+        max-width: 120px;
+        padding: 5px;
+    }
+}
+
+/* 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --purple-light: rgb(172, 16, 239);
+        --purple-light-transparent: rgba(172, 16, 239, 0.7);
+        --purple-medium: #5927e0;
+        --purple-strong: #3f1ca0;
+        --background: #111;
+        --text: hsl(221, 19%, 66%);
+        --title: white;
+        --article-shadow: black;
+        --link: var(--purple-medium);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --purple-light: rgb(172, 16, 239);
+        --purple-light-transparent: rgba(172, 16, 239, 0.7);
+        --purple-medium: #5927e0;
+        --purple-strong: #3f1ca0;
+        --background: white;
+        --text: #6b7280;
+        --title: black;
+        --article-shadow: #333;
+        --link: var(--purple-light-transparent);
+    }
+} */

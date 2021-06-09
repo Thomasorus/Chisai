@@ -1,0 +1,172 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<atom:link href="https://thomasorus.github.io/Chisai/feed.xml" rel="self" type="application/rss+xml" />
+<title>Chīsai | Chīsai, a small and ready to use micro-site generator.</title>
+<link>https://thomasorus.github.io/Chisai/</link>
+<description>Chīsai — Chīsai, a small and ready to use micro-site generator.</description>
+<lastBuildDate>2021-06-09</lastBuildDate>
+<image>
+  <url>https://thomasorus.github.io/Chisai/assets/rss.png</url>
+  <title>Chīsai — Chīsai, a small and ready to use micro-site generator.</title>
+<link>https://thomasorus.github.io/Chisai/</link>
+</image>
+<item>
+  <title>Merry Christmas!</title>
+  <link>https://thomasorus.github.io/Chisai/24-12-2021.html</link>
+  <guid isPermaLink="false">https://thomasorus.github.io/Chisai/24-12-2021.html</guid>
+  <pubDate>2021-12-24 00:00:00</pubDate>
+<description>
+<![CDATA[<h1>Merry Christmas!</h1>
+<p>Merry Christmas to all of you! I had a lovely dinner and got super socks from my partner!</p>
+]]>
+  </description>
+</item><item>
+  <title>Art</title>
+  <link>https://thomasorus.github.io/Chisai/art.html</link>
+  <guid isPermaLink="false">https://thomasorus.github.io/Chisai/art.html</guid>
+  <pubDate>2021-06-09 17:20:56</pubDate>
+<description>
+<![CDATA[<h1>Art</h1>
+<p>In this section I list art pieces that I enjoy. Creating pages in this art section is very simple: just add a new file and the generator will create them instantly!</p>
+<ul class='listing'><li><h3><a href='23-01-2021.html'>Kaguya dancing</a></h3><small>23-01-2021</small></li>
+<li><h3><a href='12-01-2021.html'>Chihiro having dinner</a></h3><small>12-01-2021</small></li>
+<li><h3><a href='08-01-2021.html'>A strange looking city</a></h3><small>08-01-2021</small></li>
+<li><h3><a href='05-01-2021.html'>A pensive blue man</a></h3><small>05-01-2021</small></li>
+<li><h3><a href='02-01-2021.html'>A lady laying down</a></h3><small>02-01-2021</small></li>
+</ul>]]>
+  </description>
+</item><item>
+  <title>Blog</title>
+  <link>https://thomasorus.github.io/Chisai/blog.html</link>
+  <guid isPermaLink="false">https://thomasorus.github.io/Chisai/blog.html</guid>
+  <pubDate>2021-06-09 17:20:56</pubDate>
+<description>
+<![CDATA[<h1>Blog</h1>
+<p>I post my artist progress here!</p>
+<ul class='listing'><li><h3><a href='24-12-2021.html'>Merry Christmas!</a></h3><small>24-12-2021</small></li>
+<li><h3><a href='01-01-2021.html'>Happy new year!</a></h3><small>01-01-2021</small></li>
+</ul>]]>
+  </description>
+</item><item>
+  <title>No date</title>
+  <link>https://thomasorus.github.io/Chisai/no-date.html</link>
+  <guid isPermaLink="false">https://thomasorus.github.io/Chisai/no-date.html</guid>
+  <pubDate>2021-06-09 17:20:56</pubDate>
+<description>
+<![CDATA[<h1>No date</h1>
+<p>This file has no date. It means it won't be listed using a choosen date but using the last time the file was edited.</p>
+]]>
+  </description>
+</item><item>
+  <title>How to name files</title>
+  <link>https://thomasorus.github.io/Chisai/naming-demo.html</link>
+  <guid isPermaLink="false">https://thomasorus.github.io/Chisai/naming-demo.html</guid>
+  <pubDate>2021-06-09 17:20:56</pubDate>
+<description>
+<![CDATA[<h1>How to name files</h1>
+<p>This page lists the different ways of naming files.</p>
+<ul class='listing'><li><h3><a href='no-date.html'>No date</a></h3><small>09-06-2021 17:20:56</small></li>
+<li><h3><a href='no-date-test.html'>This is a no date test to see how things are working.</a></h3><small>09-06-2021 17:20:56</small></li>
+<li><h3><a href='23-05-2021.html'>Simple Date</a></h3><small>23-05-2021</small></li>
+<li><h3><a href='02-01-2021-name-of-file.html'>Date and name</a></h3><small>02-01-2021</small></li>
+</ul>]]>
+  </description>
+</item><item>
+  <title>This is a no date test to see how things are working.</title>
+  <link>https://thomasorus.github.io/Chisai/no-date-test.html</link>
+  <guid isPermaLink="false">https://thomasorus.github.io/Chisai/no-date-test.html</guid>
+  <pubDate>2021-06-09 17:20:56</pubDate>
+<description>
+<![CDATA[<h1>This is a no date test to see how things are working.</h1>
+<p>This file has no date. It means it won't be listed using a choosen date but using the last time the file was edited.</p>
+<p>This is a new test.</p>
+]]>
+  </description>
+</item><item>
+  <title>Simple Date</title>
+  <link>https://thomasorus.github.io/Chisai/23-05-2021.html</link>
+  <guid isPermaLink="false">https://thomasorus.github.io/Chisai/23-05-2021.html</guid>
+  <pubDate>2021-05-23 00:00:00</pubDate>
+<description>
+<![CDATA[<h1>Simple Date</h1>
+<p>This is a post with a single date. This date will be used both for listing and for the url.</p>
+]]>
+  </description>
+</item><item>
+  <title>Kaguya dancing</title>
+  <link>https://thomasorus.github.io/Chisai/23-01-2021.html</link>
+  <guid isPermaLink="false">https://thomasorus.github.io/Chisai/23-01-2021.html</guid>
+  <pubDate>2021-01-23 00:00:00</pubDate>
+<description>
+<![CDATA[<h1>Kaguya dancing</h1>
+<p>A still image from the movie The Tale of Princess Kaguya.</p>
+<p><img src="https://thomasorus.github.io/Chisai/medias/kaguya.jpg" alt="Kaguyra Dancing"></p>
+]]>
+  </description>
+</item><item>
+  <title>Chihiro having dinner</title>
+  <link>https://thomasorus.github.io/Chisai/12-01-2021.html</link>
+  <guid isPermaLink="false">https://thomasorus.github.io/Chisai/12-01-2021.html</guid>
+  <pubDate>2021-01-12 00:00:00</pubDate>
+<description>
+<![CDATA[<h1>Chihiro having dinner</h1>
+<p>A still image from the movie Chihiro by Studio Ghibli.</p>
+<p><img src="https://thomasorus.github.io/Chisai/medias/chihiro.jpg" alt="Chihiro having dinner"></p>
+]]>
+  </description>
+</item><item>
+  <title>A strange looking city</title>
+  <link>https://thomasorus.github.io/Chisai/08-01-2021.html</link>
+  <guid isPermaLink="false">https://thomasorus.github.io/Chisai/08-01-2021.html</guid>
+  <pubDate>2021-01-08 00:00:00</pubDate>
+<description>
+<![CDATA[<h1>A strange looking city</h1>
+<p>This city is by François Schuiten.</p>
+<p><img src="https://thomasorus.github.io/Chisai/medias/city.jpeg" alt="Strange floating city by François Schuiten"></p>
+]]>
+  </description>
+</item><item>
+  <title>A pensive blue man</title>
+  <link>https://thomasorus.github.io/Chisai/05-01-2021.html</link>
+  <guid isPermaLink="false">https://thomasorus.github.io/Chisai/05-01-2021.html</guid>
+  <pubDate>2021-01-05 00:00:00</pubDate>
+<description>
+<![CDATA[<h1>A pensive blue man</h1>
+<p>This is from Watchen by Dave Gibbons.</p>
+<p><img src="https://thomasorus.github.io/Chisai/medias/blue-man.png" alt="Blue man thinking by Dave Gibbons"></p>
+]]>
+  </description>
+</item><item>
+  <title>A lady laying down</title>
+  <link>https://thomasorus.github.io/Chisai/02-01-2021.html</link>
+  <guid isPermaLink="false">https://thomasorus.github.io/Chisai/02-01-2021.html</guid>
+  <pubDate>2021-01-02 00:00:00</pubDate>
+<description>
+<![CDATA[<h1>A lady laying down</h1>
+<p>This art is by <a href="https://twitter.com/zeen_chin">Zeen Chin</a>.</p>
+<p><img src="https://thomasorus.github.io/Chisai/medias/lady.jpeg" alt="Art by Zeen Chin"></p>
+]]>
+  </description>
+</item><item>
+  <title>Date and name</title>
+  <link>https://thomasorus.github.io/Chisai/name-of-file.html</link>
+  <guid isPermaLink="false">https://thomasorus.github.io/Chisai/name-of-file.html</guid>
+  <pubDate>2021-01-02 00:00:00</pubDate>
+<description>
+<![CDATA[<h1>Date and name</h1>
+<p>This file has both a date and a name. It means it will use the indicated date for listings, and the rest of the name for the url.</p>
+]]>
+  </description>
+</item><item>
+  <title>Happy new year!</title>
+  <link>https://thomasorus.github.io/Chisai/01-01-2021.html</link>
+  <guid isPermaLink="false">https://thomasorus.github.io/Chisai/01-01-2021.html</guid>
+  <pubDate>2021-01-01 00:00:00</pubDate>
+<description>
+<![CDATA[<h1>Happy new year!</h1>
+<p>Happy new year to all of you!</p>
+]]>
+  </description>
+</item>
+</channel>
+</rss>
