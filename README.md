@@ -1,4 +1,4 @@
-![Chisai logo](medias/50B4D5E9-1B5E-4F08-AABF-80B3DFA32A18.jpeg)
+![Chisai logo](medias/chisai_square.png)
 
 # Chīsai!
 
