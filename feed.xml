@@ -4,27 +4,17 @@
 <title>Chīsai | Chīsai, a small and ready to use micro-site generator.</title>
 <link>https://thomasorus.github.io/Chisai/</link>
 <description>Chīsai — Chīsai, a small and ready to use micro-site generator.</description>
-<lastBuildDate>2021-06-09</lastBuildDate>
+<lastBuildDate>2022-04-26</lastBuildDate>
 <image>
   <url>https://thomasorus.github.io/Chisai/assets/rss.png</url>
   <title>Chīsai — Chīsai, a small and ready to use micro-site generator.</title>
 <link>https://thomasorus.github.io/Chisai/</link>
 </image>
 <item>
-  <title>Merry Christmas!</title>
-  <link>https://thomasorus.github.io/Chisai/24-12-2021.html</link>
-  <guid isPermaLink="false">https://thomasorus.github.io/Chisai/24-12-2021.html</guid>
-  <pubDate>2021-12-24 00:00:00</pubDate>
-<description>
-<![CDATA[<h1>Merry Christmas!</h1>
-<p>Merry Christmas to all of you! I had a lovely dinner and got super socks from my partner!</p>
-]]>
-  </description>
-</item><item>
   <title>Art</title>
   <link>https://thomasorus.github.io/Chisai/art.html</link>
   <guid isPermaLink="false">https://thomasorus.github.io/Chisai/art.html</guid>
-  <pubDate>2021-06-09 17:20:56</pubDate>
+  <pubDate>2022-04-26 10:25:43</pubDate>
 <description>
 <![CDATA[<h1>Art</h1>
 <p>In this section I list art pieces that I enjoy. Creating pages in this art section is very simple: just add a new file and the generator will create them instantly!</p>
@@ -39,7 +29,7 @@
   <title>Blog</title>
   <link>https://thomasorus.github.io/Chisai/blog.html</link>
   <guid isPermaLink="false">https://thomasorus.github.io/Chisai/blog.html</guid>
-  <pubDate>2021-06-09 17:20:56</pubDate>
+  <pubDate>2022-04-26 10:25:43</pubDate>
 <description>
 <![CDATA[<h1>Blog</h1>
 <p>I post my artist progress here!</p>
@@ -51,7 +41,7 @@
   <title>No date</title>
   <link>https://thomasorus.github.io/Chisai/no-date.html</link>
   <guid isPermaLink="false">https://thomasorus.github.io/Chisai/no-date.html</guid>
-  <pubDate>2021-06-09 17:20:56</pubDate>
+  <pubDate>2022-04-26 10:25:43</pubDate>
 <description>
 <![CDATA[<h1>No date</h1>
 <p>This file has no date. It means it won't be listed using a choosen date but using the last time the file was edited.</p>
@@ -61,12 +51,12 @@
   <title>How to name files</title>
   <link>https://thomasorus.github.io/Chisai/naming-demo.html</link>
   <guid isPermaLink="false">https://thomasorus.github.io/Chisai/naming-demo.html</guid>
-  <pubDate>2021-06-09 17:20:56</pubDate>
+  <pubDate>2022-04-26 10:25:43</pubDate>
 <description>
 <![CDATA[<h1>How to name files</h1>
 <p>This page lists the different ways of naming files.</p>
-<ul class='listing'><li><h3><a href='no-date.html'>No date</a></h3><small>09-06-2021 17:20:56</small></li>
-<li><h3><a href='no-date-test.html'>This is a no date test to see how things are working.</a></h3><small>09-06-2021 17:20:56</small></li>
+<ul class='listing'><li><h3><a href='no-date.html'>No date</a></h3><small>26-04-2022 10:25:43</small></li>
+<li><h3><a href='no-date-test.html'>This is a no date test to see how things are working.</a></h3><small>26-04-2022 10:25:43</small></li>
 <li><h3><a href='23-05-2021.html'>Simple Date</a></h3><small>23-05-2021</small></li>
 <li><h3><a href='02-01-2021-name-of-file.html'>Date and name</a></h3><small>02-01-2021</small></li>
 </ul>]]>
@@ -75,11 +65,21 @@
   <title>This is a no date test to see how things are working.</title>
   <link>https://thomasorus.github.io/Chisai/no-date-test.html</link>
   <guid isPermaLink="false">https://thomasorus.github.io/Chisai/no-date-test.html</guid>
-  <pubDate>2021-06-09 17:20:56</pubDate>
+  <pubDate>2022-04-26 10:25:43</pubDate>
 <description>
 <![CDATA[<h1>This is a no date test to see how things are working.</h1>
 <p>This file has no date. It means it won't be listed using a choosen date but using the last time the file was edited.</p>
 <p>This is a new test.</p>
+]]>
+  </description>
+</item><item>
+  <title>Merry Christmas!</title>
+  <link>https://thomasorus.github.io/Chisai/24-12-2021.html</link>
+  <guid isPermaLink="false">https://thomasorus.github.io/Chisai/24-12-2021.html</guid>
+  <pubDate>2021-12-24 00:00:00</pubDate>
+<description>
+<![CDATA[<h1>Merry Christmas!</h1>
+<p>Merry Christmas to all of you! I had a lovely dinner and got super socks from my partner!</p>
 ]]>
   </description>
 </item><item>
