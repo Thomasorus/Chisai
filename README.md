@@ -37,3 +37,6 @@ See the [wiki](https://github.com/Thomasorus/Chisai/wiki) for extensive guides f
 ## Can I self-host it?
 
 Yes of course! Chisai only produces HTML. You can add the generated website on your own server. Even better: if your server has Python, you can rebuild the website direcly on your server. Be careful that you might have to reconfigure some things to make it work.
+
+
+
